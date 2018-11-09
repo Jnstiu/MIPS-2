@@ -1,0 +1,5 @@
+.text
+	main:
+	li $v0, 8 #User input
+	syscall
+	la $a0, buffer
