@@ -1,3 +1,8 @@
+.data
+        str0: .asciiz "Input is too long." #Displays string
+	str1: .asciiz "Input is empty."
+        str2: .asciiz "Invalid base-N number."
+
 .text
 	main:
 	li $v0, 8 #User input
