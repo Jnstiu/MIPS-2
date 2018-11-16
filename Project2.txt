@@ -1,10 +1,14 @@
 .data
-        str0: .asciiz "Input is too long." #Displays string
-	str1: .asciiz "Input is empty."
-        str2: .asciiz "Invalid base-N number."
+        str0: .asciiz "Input is too long." #Displays and string gets added to data - long input string
+	str1: .asciiz "Input is empty." #String is added to data - empty input
+        str2: .asciiz "Invalid base-N number." #String is added to data - invalid input
+	str3: .space 8 #Sets aside space for input of 8 bits
 
 .text
-	main:
-	li $v0, 8 #User input
-	syscall
-	la $a0, buffer
+str0Error: #For long input
+  la $a0, str0 #System call for a long input
+  li $v0, 4 #Address of string that gets printed
+  syscall
+  j exit  #Jumps to exit of program
+  
+  
